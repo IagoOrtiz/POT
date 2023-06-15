@@ -1,0 +1,58 @@
+@use 'src/styles.scss' as s; 
+
+.publicacion {
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    a:hover {
+        color: inherit;
+    }
+    
+    :hover {
+        transition: background-color, 0.7s;
+        background-color: darken(s.$primary, 10%);
+    }
+    
+    :active {
+        background-color: darken(s.$primary, 25%);
+    }
+
+    .image-container {
+        height: 120px;
+        width: 120px;
+        border: 1px solid s.$secondary;
+
+        :hover {
+            background-color: inherit;
+        }
+        
+        img {
+            height: 100%;
+            padding: 10px;
+        }
+    }
+
+    .usericon {
+        flex-shrink: 0;
+        height: 120px;
+        width: 120px;
+        border-radius: 100%;
+        overflow: hidden;
+    
+        img {
+            width: 100%;
+        } 
+    }
+}
+
+
+
+
+.error-window {
+    img {
+        max-width: 300px;
+    }
+}

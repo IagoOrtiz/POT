@@ -1,0 +1,24 @@
+<div class="card bg-tertiary m-auto p-3 my-3">
+    <h3 class="text-center">¡Estamos encantados de tenerte aquí!</h3>
+    <h5 class="text-center">Por favor introduce tus datos para crear tu cuenta</h5>
+    <form class="mt-3">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre*</label>
+            <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" id="nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="apellidos" class="form-label">Apellidos*</label>
+            <input [(ngModel)]="apellido" name="apellido" type="text" class="form-control" id="apellidos" required>
+          </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email*</label>
+          <input [(ngModel)]="email" name="email" type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña*</label>
+          <input [(ngModel)]="password" name="password" type="password" class="form-control" id="password" required>
+        </div>
+        <div class="form-text">* = Requerido</div>
+        <button (click)="crearCuenta()" class="btn btn-primary mt-2 text-light">Registrarse</button>
+      </form>
+</div>

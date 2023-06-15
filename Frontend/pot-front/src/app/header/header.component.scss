@@ -1,0 +1,22 @@
+* {
+    font-family: "Flexo Medium",arial,sans-serif;
+}
+
+.dropdown-menu {
+    left: -105px;
+}
+
+.usericon {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    } 
+}
+
+a {
+    color: inherit;
+}

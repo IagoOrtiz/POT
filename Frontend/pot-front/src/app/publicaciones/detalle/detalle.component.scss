@@ -1,0 +1,20 @@
+@use '../../../styles.scss' as s; 
+
+.image-container {
+    width: 100%;
+    max-width: 200px;
+    border: 1px solid s.$secondary;
+    
+    img {
+        width: 100%;
+    }
+}
+
+//Arregla inconsistencias con el tamaño de las tablas
+// .canvas-container {
+//     padding-right: 1.5%;
+// }
+
+.fix {
+    height: 200px;
+}

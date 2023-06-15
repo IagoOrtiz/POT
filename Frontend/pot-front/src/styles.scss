@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {font-family: "Flexo Medium"; src: url("//db.onlinewebfonts.com/t/d2d21cf0ee4c1d969d8a4dccc587ab26.eot"); src: url("//db.onlinewebfonts.com/t/d2d21cf0ee4c1d969d8a4dccc587ab26.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d2d21cf0ee4c1d969d8a4dccc587ab26.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d2d21cf0ee4c1d969d8a4dccc587ab26.woff") format("woff"), url("//db.onlinewebfonts.com/t/d2d21cf0ee4c1d969d8a4dccc587ab26.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d2d21cf0ee4c1d969d8a4dccc587ab26.svg#Flexo Medium") format("svg"); }
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+$primary: #3882dc;
+$secondary: #13315C;
+$tertiary: #0B2545;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.bg-tertiary {
+    background-color: $tertiary;
+}
+
+h1, h2, h3, h4, h5, label {
+    font-family:"Flexo Medium",arial,sans-serif;
+}

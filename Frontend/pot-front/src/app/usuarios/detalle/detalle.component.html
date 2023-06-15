@@ -1,0 +1,52 @@
+<div class="card bg-tertiary vw-75 m-3 px-sm-5 px-3 py-3 d-flex">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between">
+        <div class="image-container mt-3 perfil d-flex align-items-center">
+        <img src="assets/img/users/{{ usuario.foto }}"
+            alt="{{ usuario.nombre }}">
+        </div>
+        <div class="d-flex align-items-center mt-3 mt-md-0">
+            <h1>{{usuario.nombre}} {{usuario.apellido}}</h1>
+        </div>
+    </div>
+    <div class="text-center mt-4 mb-2 mb-sm-2 ">
+        <h5>Aquí puedes ver las publicaciones de {{usuario.nombre}}</h5>
+    </div>
+    <div>
+        <div class="card text-bg-primary mb-3 position-relative publicacion" *ngFor="let pokemon of publicaciones">
+            <a routerLink="/publicaciones/detalle/{{pokemon.id}}" class="p-2 rounded">
+            <div class="card-body d-flex align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="container ms-2 d-none d-md-block">
+                    <h4>{{ pokemon.nombre | uppercase}}</h4>
+                    <p class="mb-0">
+                        {{pokemon.descripcion}} <a *ngIf="!pokemon.descripcion">[Sin descripción]</a>
+                    </p>
+                </div>
+                <div class="image-container bg-white rounded">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/{{ pokemon.nombre }}.png" alt="{{ pokemon.nombre }}" *ngIf="!pokemon.shiny else shiny" class="rounded">
+                    <ng-template #shiny>
+                        <img src="https://img.pokemondb.net/sprites/home/shiny/{{ pokemon.nombre }}.png" alt="{{ pokemon.nombre }}" class="rounded">
+                    </ng-template>
+                </div>
+            </div>
+            <div class="d-md-none p-2">
+                <h4>{{pokemon.nombre | uppercase}}</h4>
+                    <p class="mb-0">
+                        {{pokemon.descripcion}} <a *ngIf="!pokemon.descripcion">[Sin descripción]</a>
+                    </p>
+            </div>
+            </a>
+        </div>
+        <div *ngIf="publicaciones.length === 0 && userId != usuario.id" class="text-center text-white-50">
+            <p>
+                Cuanto silencio, parece que este usuario no tiene ninguna publicacion...
+            </p>
+        </div>
+        <div *ngIf="publicaciones.length === 0 && userId === usuario.id" class="text-center text-white-50">
+            <p>
+                Cuanto silencio, parece que no tienes ninguna publicacion... ¡Arreglemoslo!
+            </p>
+            <a class="btn btn-warning" routerLink="/publicaciones/nueva">Crea tu primera publicación</a>
+        </div>
+    </div>
+</div>
