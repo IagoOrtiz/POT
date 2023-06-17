@@ -63,6 +63,20 @@ export class FormComponent implements OnInit {
   }
 
   public update():void{
+    this.publicacion.ivs = "";
+    this.publicacion.evs = "";
+    for (let i = 0; i < 6; i++) {
+      if (!this.publicacion.ivsForm[i]) {
+        this.publicacion.ivsForm[i] = 0;
+      }
+      this.publicacion.ivs += this.publicacion.ivsForm[i]+"|";
+    }
+    for (let i = 0; i < 6; i++) {
+      if (!this.publicacion.evsForm[i]) {
+        this.publicacion.evsForm[i] = 0;
+      }
+      this.publicacion.evs += this.publicacion.evsForm[i]+"|";
+    }
     this.publicacionService.update(this.publicacion)
     .subscribe( publicacion => {
       this.router.navigate(['/publicaciones'])

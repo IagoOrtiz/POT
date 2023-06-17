@@ -34,7 +34,7 @@ public class Publicacion implements Serializable{
     @Column(length = 18)
     private String ivs;
 
-    @Column(length = 20)
+    @Column(length = 25)
     private String evs;
 
     private boolean activo;
