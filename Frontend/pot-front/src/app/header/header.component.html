@@ -28,7 +28,7 @@
             </div>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/usuarios/{{userId}}">{{nombre}}</a></li>
+            <li><a class="dropdown-item" routerLink="/usuarios/{{userId}}">Tu zona</a></li>
             <li><a class="dropdown-item" routerLink="/usuarios/editar/{{userId}}">Configuración</a></li>
             <li><a class="dropdown-item" routerLink="/publicaciones/nueva">Nueva publicacion</a></li>
             <li>
@@ -40,8 +40,8 @@
       </ul>
 
       <ng-template #login>
-        <a routerLink="login" class="me-3 me-lg-0">Iniciar sesión</a>
-        <a routerLink="register">Crear cuenta</a>
+        <a routerLink="login" class="me-3 p-1 btn btn-outline-light">Iniciar sesión</a>
+        <a routerLink="register" class="p-1 btn btn-outline-light">Crear cuenta</a>
       </ng-template>
 
     </div>

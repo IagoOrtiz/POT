@@ -9,7 +9,7 @@
             <h1>{{usuario.nombre}} {{usuario.apellido}}</h1>
         </div>
     </div>
-    <div class="text-center mt-4 mb-2 mb-sm-2 ">
+    <div class="text-center mt-2 mb-2 mb-sm-2 ">
         <h5>Aquí puedes ver las publicaciones de {{usuario.nombre}}</h5>
     </div>
     <div>
@@ -46,7 +46,11 @@
             <p>
                 Cuanto silencio, parece que no tienes ninguna publicacion... ¡Arreglemoslo!
             </p>
-            <a class="btn btn-warning" routerLink="/publicaciones/nueva">Crea tu primera publicación</a>
+            <a c
+            lass="btn btn-warning" routerLink="/publicaciones/nueva">Crea tu primera publicación</a>
+        </div>
+        <div class="text-white-50 my-md-3">
+            Para discutir los intercambios notifica al usuario en el siguiente correo: {{usuario.email}}
         </div>
     </div>
 </div>

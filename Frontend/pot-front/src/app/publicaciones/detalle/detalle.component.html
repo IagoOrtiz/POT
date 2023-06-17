@@ -11,7 +11,10 @@
 
         </div>
         <div class="card bg-primary w-100 p-2 ms-sm-5">
-            {{publicacion.descripcion}} <a *ngIf="!publicacion.descripcion">[Sin descripción]</a>
+            {{publicacion.descripcion}}
+            <div class="text-center d-flex align-items-center m-auto h-100" *ngIf="!publicacion.descripcion">
+                [Sin descripción]
+            </div> 
         </div>
     </div>
     <div class="card bg-primary canvas-container p-2">

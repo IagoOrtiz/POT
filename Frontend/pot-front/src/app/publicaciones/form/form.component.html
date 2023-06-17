@@ -1,4 +1,4 @@
-<div class="card bg-tertiary vw-75 m-3 px-5 py-3">
+<div class="card bg-tertiary vw-75 m-3 px-3 px-md-5 py-3">
     <form>
 
         <!-- CAMBIAR ESTO CUANDO SE AÑADA AUTENTICACION DE USUARIO -->
@@ -934,7 +934,7 @@
             <div class="d-flex flex-column flex-md-row">
                 <div class="mb-3">
                     <label class="form-label">IVs</label>
-                    <div class="d-flex flex-row flex-md-column justify-content-between">
+                    <div class="d-flex flex-row flex-md-column flex-wrap justify-content-between">
                         <div class="me-3" *ngFor="let i of [0, 1, 2, 3, 4, 5]">
                             <label *ngIf="i === 0" class="form-label">HP</label>
                             <label *ngIf="i === 1" class="form-label">ATK</label>
@@ -952,7 +952,7 @@
 
                 <div>
                     <label class="form-label">EVs</label>
-                    <div class="d-flex flex-row flex-md-column justify-content-between">
+                    <div class="d-flex flex-row flex-md-column flex-wrap justify-content-between">
                         <div class="me-3" *ngFor="let i of [0, 1, 2, 3, 4, 5]">
                             <label *ngIf="i === 0" class="form-label">HP</label>
                             <label *ngIf="i === 1" class="form-label">ATK</label>

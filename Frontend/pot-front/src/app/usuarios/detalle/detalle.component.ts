@@ -39,10 +39,16 @@ export class UserDetalleComponent implements OnInit {
   }
 
   cargarPublicaciones() {
-    this.publicacionService.getPublicacionesByUsuario(this.userId).subscribe((publicaciones) => {
-        this.publicaciones = publicaciones;
+    this.activatedRoute.params.subscribe(params => {
+      let id = params['id']
+      if (id) {
+        this.publicacionService.getPublicacionesByUsuario(id).subscribe((publicaciones) => {
+          this.publicaciones = publicaciones;
+          console.log(publicaciones);
+          console.log(this.usuario.id);
+        })
       }
-    );
+    });
   }
 
   constructor(private usuarioService: UsuarioService, private router: Router, 
