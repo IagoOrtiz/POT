@@ -1,8 +1,5 @@
-<div class="card bg-tertiary vw-75 m-3 px-3 px-md-5 py-3">
+<div class="card bg-tertiary vw-75 m-3 px-3 px-md-5 py-3" *ngIf="userId else login" >
     <form>
-
-        <!-- CAMBIAR ESTO CUANDO SE AÑADA AUTENTICACION DE USUARIO -->
-        <input type="hidden" name="user_id" value="4">
 
         <div class="mb-3">
             <label for="pokemonSelect" class="form-label">Pokémon</label>
@@ -1005,3 +1002,9 @@
         </div>
     </form>
 </div>
+<ng-template #login>
+    <div class="text-white-50 text-center error-window">
+        <img src="assets/img/error.png" alt="Error">
+        <h3>Ups, si no has iniciado sesión no puedes crear o editar ninguna publicación.</h3>
+    </div>
+</ng-template>

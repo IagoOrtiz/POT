@@ -53,7 +53,7 @@ export class EditComponent implements OnInit {
     if (this.imagenSeleccionada) {
       this.usuarioService.subirFoto(this.imagenSeleccionada, this.userId).subscribe(
         usuarioFoto => {
-          Swal.fire("Cambio de foto exitoso", "La nueva imagen se veran reflejada tras guardar los cambios", 'success');
+          Swal.fire("Cambio de foto exitoso", "La nueva imagen se vera reflejada tras guardar los cambios", 'success');
         }
       )
     }

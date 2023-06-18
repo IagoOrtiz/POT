@@ -5,9 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { PublicacionesComponent } from './publicaciones/publicaciones.component';
-import { PublicacionService } from './publicaciones/publicacion.service';
-import { UsuarioService } from './usuarios/usuario.service';
+import { PublicacionesComponent } from './publicaciones/publicaciones.component'; 
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './publicaciones/form/form.component';
@@ -19,10 +17,12 @@ import { LoginComponent } from './usuarios/login/login.component';
 import { RegisterComponent } from './usuarios/register/register.component';
 import { EditComponent } from './usuarios/edit/edit.component';
 import { UserDetalleComponent } from './usuarios/detalle/detalle.component';
+import { ChatComponent } from './chat/chat.component';
+import { NoencontradoComponent } from './noencontrado/noencontrado.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/welcome', pathMatch: 'full'},
+  {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: 'welcome', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
@@ -32,7 +32,9 @@ const routes: Routes = [
   {path: 'publicaciones/editar/:id', component: FormComponent},
   {path: 'publicaciones/detalle/:id', component: DetalleComponent},
   {path: 'usuarios/editar/:id', component: EditComponent},
-  {path: 'usuarios/:id', component: UserDetalleComponent}
+  {path: 'usuarios/:id', component: UserDetalleComponent},
+  {path: 'chat', component: ChatComponent},
+  {path: '**', component: NoencontradoComponent}
 ]
 
 @NgModule({
@@ -48,7 +50,9 @@ const routes: Routes = [
     UsuariosComponent,
     LoginComponent,
     RegisterComponent,
-    EditComponent
+    EditComponent,
+    ChatComponent,
+    NoencontradoComponent
   ],
   imports: [
     BrowserModule,

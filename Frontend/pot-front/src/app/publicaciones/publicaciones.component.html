@@ -2,7 +2,7 @@
     <div class="card text-bg-primary mb-3 position-relative publicacion" *ngFor="let pokemon of publicaciones">
         <a routerLink="/publicaciones/detalle/{{pokemon.id}}" class="p-2 rounded">
         <div class="card-body d-flex align-items-center justify-content-between flex-column flex-sm-row">
-            <div class="usericon d-flex align-items-center">
+            <div class="usericon d-flex align-items-center mb-3 mb-sm-0">
                 <a routerLink="/usuarios/{{pokemon.user}}">
                     <img src="assets/img/users/{{pokemon.userImagen}}" alt="Perfil">
                 </a>
@@ -30,10 +30,10 @@
     </div>
     <div *ngIf="error" class="w-100 d-flex align-items-center justify-content-center pb-5 mb-5 flex-column error-window">
         <img src="assets/img/error.png" alt="Error">
-        <div>Algo ha salido mal, prueba a recargar la página.</div>
+        <div class="text-white-50 text-center mt-3"><h3>Algo ha salido mal, prueba a recargar la página.</h3></div>
     </div>
     <div *ngIf="publicaciones.length === 0" class="w-100 d-flex align-items-center justify-content-center pb-5 mb-5 flex-column error-window">
         <img src="assets/img/no-result.png" alt="Sin resultado">
-        <div>Ups! Parece que no hay publicaciones que coincidan con tu busqueda</div>
+        <div class="text-white-50 text-center mt-3"><h3>Ups! Parece que no hay publicaciones que coincidan con tu busqueda</h3></div>
     </div>
 </div>

@@ -68,7 +68,6 @@ export class PublicacionesComponent implements OnInit {
           })
         ).subscribe((publicaciones) => {
             this.publicaciones = publicaciones;
-            console.log(this.publicaciones);
           }, error => {
             this.error = true;
           }

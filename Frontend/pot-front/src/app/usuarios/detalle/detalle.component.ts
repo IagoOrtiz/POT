@@ -44,8 +44,6 @@ export class UserDetalleComponent implements OnInit {
       if (id) {
         this.publicacionService.getPublicacionesByUsuario(id).subscribe((publicaciones) => {
           this.publicaciones = publicaciones;
-          console.log(publicaciones);
-          console.log(this.usuario.id);
         })
       }
     });

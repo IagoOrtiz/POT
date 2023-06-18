@@ -1,0 +1,47 @@
+<div class="card mx-5 h-100" *ngIf="userId else login">
+    <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item me-2">
+                <button type="button" (click)="conectar()" class="btn btn-success" 
+                *ngIf="!conectado">Conectar</button>
+            </li>
+            <li class="nav-item">
+                <button type="button" (click)="desconectar()" class="btn btn-warning text-light" 
+                *ngIf="conectado">Cerrar chat</button>
+            </li>
+        </ul>
+    </div>
+
+    <div #scrollChat [scrollTop]="scrollChat.scrollHeight" class="card-body" style="overflow-y: scroll; height: 430px;" *ngIf="conectado">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item list-group-item-light" *ngFor="let mensaje of mensajes">
+                <div class="usericon">
+                    <a routerLink="usuarios/{{mensaje.userId}}"><img src="assets/img/users/{{mensaje.foto}}"></a>
+                </div>
+                <a routerLink="usuarios/{{mensaje.userId}}" style="text-decoration: none;" [ngStyle]="{'color': mensaje.color}">{{mensaje.nombre}}</a> : {{mensaje.texto}}<br>
+                <span class="text-black-50">{{mensaje.fecha | date:'shortTime'}}</span>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="card-footer" *ngIf="conectado">
+        <form class="row row-cols-4 g-3 align-items-center justify">
+            <div class="form-group col-11">
+                <input type="text" [(ngModel)]="mensaje.texto" class="form-control" placeholder="Escribe un mensaje..." name="texto"
+                (keyup)="escribiendoEvento($event)" (keydown)="enviarTexto($event)">
+            </div>
+            <button type="submit" (click)="enviarMensaje()" style="min-width: 40px;" class="btn btn-primary text-light col-11 col-sm-1 mx-2 mx-sm-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                    <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+                </svg>
+            </button>
+        </form>
+        <div class="text-black-50">{{escribiendo}}</div>
+    </div>
+</div>
+<ng-template #login>
+    <div class="text-white-50 text-center error-window">
+        <img src="assets/img/error.png" alt="Error">
+        <h3>Ups, si no has iniciado sesión no puedes acceder al chat global.</h3>
+    </div>
+</ng-template>

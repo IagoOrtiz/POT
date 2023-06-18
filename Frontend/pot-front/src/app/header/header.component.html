@@ -25,15 +25,17 @@
             aria-expanded="false">
             <div class="usericon d-flex align-items-center">
               <img src="assets/img/users/{{foto}}" alt="Perfil">
+              <span class="display-block display-md-none"></span>
             </div>
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" routerLink="/usuarios/{{userId}}">Tu zona</a></li>
-            <li><a class="dropdown-item" routerLink="/usuarios/editar/{{userId}}">Configuración</a></li>
+            <li><a class="dropdown-item" routerLink="/chat">Chat global</a></li>
             <li><a class="dropdown-item" routerLink="/publicaciones/nueva">Nueva publicacion</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
+            <li><a class="dropdown-item" routerLink="/usuarios/editar/{{userId}}">Configuración de cuenta</a></li>
             <li><button class="dropdown-item" (click)="cierraSesion()">Cerrar sesión</button></li>
           </ul>
         </li>
