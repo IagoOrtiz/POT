@@ -1,4 +1,4 @@
-<div class="card bg-tertiary vw-75 m-3 px-3 px-md-5 py-3" *ngIf="userId else login" >
+<div class="card bg-tertiary vw-75 m-3 px-3 px-md-5 py-3" *ngIf="!publicacion.id || userId === publicacion.id; else invalid">
     <form>
 
         <div class="mb-3">
@@ -1002,6 +1002,12 @@
         </div>
     </form>
 </div>
+<ng-template #invalid>
+    <div class="text-white-50 text-center error-window" *ngIf="userId else login">
+        <img src="assets/img/error.png" alt="Error">
+        <h3>Ups, no puedes editar publicaciones que no te pertenecen. ¡No seas ladron!</h3>
+    </div>
+</ng-template>
 <ng-template #login>
     <div class="text-white-50 text-center error-window">
         <img src="assets/img/error.png" alt="Error">
